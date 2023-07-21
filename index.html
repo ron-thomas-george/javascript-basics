@@ -7,12 +7,63 @@
   </head>
   <body>
     <script src="app.js"></script>
+
     <p id="demo"></p>
     <script>
       var a = 5;
       var b = 6;
       var c = a + b;
       document.getElementById("demo").innerHTML = "The value of c is" + c;
+    </script>
+
+    <!-- Create a function  -->
+    <p id="functionDemo"></p>
+    <script>
+      function myFunction(p1, p2) {
+        return p1 * p2;
+      }
+      let result = myFunction(5, 6);
+      document.getElementById("functionDemo").innerHTML = result;
+    </script>
+
+    <!-- Create an object -->
+    <p id="objectDemo"></p>
+    <script>
+      const person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: "243",
+      };
+      document.getElementById("objectDemo").innerHTML =
+        person.firstName + " " + person.lastName;
+    </script>
+
+    <!-- reference an object using this -->
+    <p id="objectPerson"></p>
+    <script>
+      const person1 = {
+        firstName: "Tom",
+        lastName: "Cruise",
+        id: "562",
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
+      };
+      document.getElementById("objectPerson").innerHTML = person1.fullName();
+    </script>
+
+    <p id="objectCar"></p>
+    <script>
+      const car = {
+        type: "SUV",
+        name: "Jeep",
+        year: "2019",
+      };
+      function carDetails() {
+        return car.type;
+      }
+      const newCar = carDetails.bind(car);
+      document.getElementById("objectCar").innerHTML = car.type;
     </script>
   </body>
 </html>
